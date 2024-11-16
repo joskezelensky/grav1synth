@@ -42,10 +42,10 @@ jobs:
             ${{ runner.os }}-cargo-
 
       - name: Build project
-        run: cargo build --verbose
+        run: cargo build --release
 
       - name: Run tests
-        run: cargo test --verbose
+        run: cargo -v test
 
       - name: Upload Windows Build Artifacts
         if: ${{ matrix.os == 'windows-latest' }}
